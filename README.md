@@ -42,8 +42,11 @@ To build an optimized wake word detection model with minimal false predictions, 
 
 ## Feature Extraction
 ### Techniques
+
+![Example Image](images/Feature-extraction.png)
 - **Mel Frequency Cepstral Coefficients (MFCCs)**: Commonly used feature extraction technique in speech recognition.
 - **Linear Frequency Cepstral Coefficients (LFCCs)**: Compared against MFCCs in our research for better performance.
+
 
 ### Performance Comparison
 | Model            | MFCC Accuracy | LFCC Accuracy |
@@ -63,8 +66,11 @@ To build an optimized wake word detection model with minimal false predictions, 
 - GRU
 
 ### Proposed Model Architectures
+![Example Image](images/architecture.png)
+
 - **CRNN_GRU_GRU**: Convolutional Layers + GRU Layer + GRU Layer
 - **CRNN_GRU_LSTM**: Convolutional Layers + GRU Layer + LSTM Layer
+
 
 ### Experimentation
 - Multi-head Attention
@@ -90,5 +96,67 @@ To build an optimized wake word detection model with minimal false predictions, 
 ## Setup Instructions
 ### 1. Clone the Repository
 ```bash
-git clone <repository_url>
-cd <repository_name>
+git clone https://github.com/dhairya1702/TurboCRNN
+cd TurboCRNN
+```
+
+### 2. Set Up Python Environment
+```bash
+# Using virtualenv
+pip install virtualenv
+virtualenv venv
+source venv/bin/activate  # On Windows, use venv\Scripts\activate
+
+# Using conda
+conda create --name myenv python=3.8
+conda activate myenv
+```
+
+### 3. Install Required Libraries
+```bash
+pip install numpy scipy librosa matplotlib jupyter
+```
+### 4.  Running Jupyter Notebooks
+```bash
+# Install Jupyter Notebook
+pip install jupyter
+
+# Start Jupyter Notebook
+jupyter notebook
+```
+
+### 5. Running Scripts and Notebooks
+Notebooks:
+```python
+MFCC_Extraction_Augmented.ipynb
+LFCC_Extraction_Augmented.ipynb
+Feature Extraction Techniques - Testbed.ipynb
+Data Denoising.ipynb
+Data Denoising - TestBed.ipynb
+Data Augmentation.ipynb
+```
+
+Open these notebooks in Jupyter and run each cell sequentially.
+```python
+python Dataset Creation Script.py
+```
+
+### 6. GRU LSTM Models
+```python
+GRU LSTM 2.ipynb
+GRU LSTM 5.ipynb
+GRU LSTM 8.ipynb
+```
+
+Open these notebooks in Jupyter and run each cell sequentially.
+
+## Performance Summary
+
+![Example Image](images/100k.png)
+
+Best Performer in 100k Parameter Budget: CRNN_GRU_LSTM Model Variant #5
+
+With Extra Dense Layer, Without Attention, Without Regularizer - TurboCRNN
+75% and 91% reduction in false predictions when compared to CNN and DNN baselines.
+74ms and 80ms latencies in the presence and absence of GPU.
+87k model parameters, low model complexity.
