@@ -1,6 +1,12 @@
 # TurboCRNN: A Robust and Efficient Architecture for Wake Word Detection
 ![Example Image](images/intro.png)
 
+## Pitch video
+[Watch here](https://youtu.be/cwuS56DuIR4)
+
+
+
+
 ## Introduction
 This repository contains the implementation of TurboCRNN, a novel and optimized wake word detection model designed to achieve minimal false predictions, reduced latency, and low complexity. The project focuses on preprocessing audio data, extracting features, and using advanced neural network architectures to accurately detect wake words.
 
